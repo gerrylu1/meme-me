@@ -53,6 +53,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>The app would like to access the camera to take a photo for the meme that is being created.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>The app would like to access your photo library for the meme that is being created.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
