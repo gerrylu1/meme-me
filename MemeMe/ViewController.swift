@@ -16,8 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolbar: UIToolbar!
-    
-    var memedImage: UIImage!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     struct Meme {
         var topText: String
@@ -84,10 +83,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func switchToImagePickingMode() {
         toolbar.isHidden = false
-        navBar.isHidden = true
+        //navBar.isHidden = true
         imagePickerView.isHidden = true
         topTextField.isHidden = true
         bottomTextField.isHidden = true
+        shareButton.isEnabled = false
     }
     
     func switchToMemeCreatingMode() {
@@ -95,11 +95,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.text = "BOTTOM"
         topTextField.tag = 0
         bottomTextField.tag = 0
-        navBar.isHidden = false
+        //navBar.isHidden = false
         imagePickerView.isHidden = false
         topTextField.isHidden = false
         bottomTextField.isHidden = false
         toolbar.isHidden = true
+        shareButton.isEnabled = true
     }
     
     func subscribeToKeyboardNotifications() {
@@ -144,14 +145,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
-    func save() {
-        var meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+    func save(memedImage: UIImage) {
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
     }
     
     @IBAction func shareMeme(_ sender: Any) {
-        memedImage = generateMemedImage()
-        let controller = UIActivityViewController(activityItems: [memedImage!], applicationActivities: nil)
-        self.present(controller, animated: true, completion: nil)
+        let memedImage = generateMemedImage()
+        let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        controller.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed:
+            Bool, arrayReturnedItems: [Any]?, error: Error?) in
+            if (completed) {
+                self.save(memedImage: memedImage)
+            }
+        }
+        present(controller, animated: true, completion: nil)
     }
     
     @IBAction func cancelMemeCreation(_ sender: Any) {
