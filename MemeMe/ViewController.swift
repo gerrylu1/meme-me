@@ -84,6 +84,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func switchToMemeCreatingMode() {
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
+        topTextField.tag = 0
+        bottomTextField.tag = 0
         navBar.isHidden = false
         imagePickerView.isHidden = false
         topTextField.isHidden = false
@@ -121,6 +123,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.resignFirstResponder()
         bottomTextField.resignFirstResponder()
         switchToImagePickingMode()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.tag == 0 {
+            textField.text = ""
+            textField.tag = 1
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
