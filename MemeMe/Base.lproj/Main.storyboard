@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQb-hk-Ewb">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="n1y-KX-b0d"/>
                                     <barButtonItem title="Camera" image="camera.fill" catalog="system" id="0H2-Yx-Zpp">
@@ -80,7 +80,7 @@
                             <constraint firstItem="JJZ-Nn-gSj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pa7-l7-W1J"/>
                             <constraint firstItem="1fE-vQ-qkv" firstAttribute="leading" secondItem="JJZ-Nn-gSj" secondAttribute="leading" id="bVy-cd-qlE"/>
                             <constraint firstItem="Lsa-UU-7DM" firstAttribute="leading" secondItem="JJZ-Nn-gSj" secondAttribute="leading" id="hTp-R5-rql"/>
-                            <constraint firstAttribute="bottom" secondItem="WQb-hk-Ewb" secondAttribute="bottom" id="hrc-Jx-alE"/>
+                            <constraint firstItem="WQb-hk-Ewb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hrc-Jx-alE"/>
                             <constraint firstItem="IbI-AN-amf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="j40-H0-50b"/>
                             <constraint firstItem="JJZ-Nn-gSj" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="n0Q-qM-uRu"/>
                             <constraint firstItem="JJZ-Nn-gSj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="n3q-uj-fa9"/>
