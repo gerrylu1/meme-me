@@ -156,6 +156,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 self.save(memedImage: memedImage)
             }
         }
+        controller.popoverPresentationController?.barButtonItem = (sender as! UIBarButtonItem)
         present(controller, animated: true, completion: nil)
     }
     
