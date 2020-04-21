@@ -41,12 +41,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = .center
         bottomTextField.delegate = self
+        switchToImagePickingMode()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        switchToImagePickingMode()
         subscribeToKeyboardNotifications()
     }
     
@@ -83,7 +83,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func switchToImagePickingMode() {
         toolbar.isHidden = false
-        //navBar.isHidden = true
         imagePickerView.isHidden = true
         topTextField.isHidden = true
         bottomTextField.isHidden = true
@@ -95,7 +94,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.text = "BOTTOM"
         topTextField.tag = 0
         bottomTextField.tag = 0
-        //navBar.isHidden = false
         imagePickerView.isHidden = false
         topTextField.isHidden = false
         bottomTextField.isHidden = false
