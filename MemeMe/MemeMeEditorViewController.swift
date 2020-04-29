@@ -38,6 +38,7 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
     }
@@ -163,9 +164,7 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     @IBAction func cancelMemeCreation(_ sender: Any) {
-        topTextField.resignFirstResponder()
-        bottomTextField.resignFirstResponder()
-        switchToImagePickingMode()
+        navigationController?.popViewController(animated: true)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

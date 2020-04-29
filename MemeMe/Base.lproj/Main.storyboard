@@ -27,7 +27,7 @@
         <!--MemeMe-->
         <scene sceneID="lXp-lb-VIv">
             <objects>
-                <tabBarController id="Ekd-qB-P0t" sceneMemberID="viewController">
+                <tabBarController id="Ekd-qB-P0t" customClass="sentMemesTabBarController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="MemeMe" id="mz4-Mr-UXM"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WOz-36-N8e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -72,7 +72,7 @@
                             <outlet property="delegate" destination="HrY-yb-gE0" id="WKY-j6-Ajv"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Collection" id="QZM-fg-8u6"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="collection" id="QZM-fg-8u6"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SuO-CO-tT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +101,7 @@
                             <outlet property="delegate" destination="ZxJ-YJ-ueQ" id="WaD-Eu-ewU"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Table" id="ZiS-71-lHR"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="table" id="ZiS-71-lHR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w26-Ch-Mnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,7 +110,7 @@
         <!--Meme Me Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemeMeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeMeEditorViewController" id="BYZ-38-t0r" customClass="MemeMeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,6 +204,8 @@
     </scenes>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="collection" width="30" height="30.5"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="table" width="30" height="30"/>
     </resources>
 </document>
