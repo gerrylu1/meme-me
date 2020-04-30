@@ -24,7 +24,6 @@ class SentMemesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         sentMemesTableView.reloadData()
-        print(memes.count)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +37,12 @@ class SentMemesTableViewController: UITableViewController {
         cell.memedImageView.image = meme.memedImage
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailView
+        detailController.meme = memes[(indexPath as NSIndexPath).row]
+        navigationController?.pushViewController(detailController, animated: true)
     }
     
     private func registerTableViewCells() {
