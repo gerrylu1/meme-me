@@ -157,6 +157,7 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
             Bool, arrayReturnedItems: [Any]?, error: Error?) in
             if completed {
                 self.save(memedImage: memedImage)
+                self.navigationController?.popViewController(animated: true)
             }
         }
         controller.popoverPresentationController?.barButtonItem = (sender as! UIBarButtonItem)
