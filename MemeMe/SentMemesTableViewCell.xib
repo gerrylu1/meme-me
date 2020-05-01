@@ -23,7 +23,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tl-yH-IVE">
-                        <rect key="frame" x="198" y="47" width="122" height="26"/>
+                        <rect key="frame" x="198" y="50" width="122" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,7 +32,6 @@
                 <constraints>
                     <constraint firstItem="JhG-co-CNn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2QP-Jg-JHF"/>
                     <constraint firstItem="0tl-yH-IVE" firstAttribute="leading" secondItem="JhG-co-CNn" secondAttribute="trailing" constant="8" id="4DL-fV-gVC"/>
-                    <constraint firstItem="0tl-yH-IVE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="36" id="Adi-FP-0ap"/>
                     <constraint firstItem="JhG-co-CNn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Fdp-kp-Yjm"/>
                     <constraint firstItem="0tl-yH-IVE" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="Jt6-cc-smC"/>
                     <constraint firstItem="0tl-yH-IVE" firstAttribute="centerY" secondItem="JhG-co-CNn" secondAttribute="centerY" id="Vxc-kI-k9o"/>
