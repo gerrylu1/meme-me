@@ -63,7 +63,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailView
-        detailController.meme = memes[(indexPath as NSIndexPath).row]
+        detailController.memeIndex = (indexPath as NSIndexPath).row
         navigationController?.pushViewController(detailController, animated: true)
     }
     
@@ -73,10 +73,12 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     
     private func flowLayoutAdjustment(width: CGFloat) {
-        let numberOfItemsInRow:Int = Int(width) / approximateDimensionForCells
-        let dimension:CGFloat = width / CGFloat(numberOfItemsInRow) - spacingForCells * 2.0
-        flowLayout.minimumInteritemSpacing = spacingForCells
-        flowLayout.minimumLineSpacing = spacingForCells
-        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        if isViewLoaded {
+            let numberOfItemsInRow:Int = Int(width) / approximateDimensionForCells
+            let dimension:CGFloat = width / CGFloat(numberOfItemsInRow) - spacingForCells * 2.0
+            flowLayout.minimumInteritemSpacing = spacingForCells
+            flowLayout.minimumLineSpacing = spacingForCells
+            flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        }
     }
 }

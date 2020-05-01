@@ -13,6 +13,8 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
     let topText = "TOP"
     let bottomText = "BOTTOM"
     
+    var memeIndex: Int?
+    
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
@@ -33,7 +35,20 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
         // Do any additional setup after loading the view.
         initMemeTextField(topTextField)
         initMemeTextField(bottomTextField)
-        switchToImagePickingMode()
+        if let memeIndex = memeIndex {
+            // edit mode for an already existing meme
+            navBar.topItem!.title = "Edit Meme"
+            toggleUIVisibilityToMemeCreatingMode(true)
+            let memeBeingEdited = (UIApplication.shared.delegate as! AppDelegate).memes[memeIndex]
+            topTextField.tag = 1
+            bottomTextField.tag = 1
+            topTextField.text = memeBeingEdited.topText
+            bottomTextField.text = memeBeingEdited.bottomText
+            imagePickerView.image = memeBeingEdited.originalImage
+        }
+        else {
+            switchToImagePickingMode()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -145,12 +160,19 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
     func save(memedImage: UIImage) {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         
-        // Add it to the meme array in the Application Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memes.append(meme)
+        if let memeIndex = memeIndex {
+            appDelegate.memes[memeIndex] = meme
+        }
+        else {
+            appDelegate.memes.append(meme)
+        }
+        
     }
     
     @IBAction func shareMeme(_ sender: Any) {
+        topTextField.resignFirstResponder()
+        bottomTextField.resignFirstResponder()
         let memedImage = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         controller.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed:
