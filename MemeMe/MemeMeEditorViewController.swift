@@ -38,13 +38,9 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
         if let memeIndex = memeIndex {
             // edit mode for an already existing meme
             navBar.topItem!.title = "Edit Meme"
-            toggleUIVisibilityToMemeCreatingMode(true)
             let memeBeingEdited = (UIApplication.shared.delegate as! AppDelegate).memes[memeIndex]
-            topTextField.tag = 1
-            bottomTextField.tag = 1
-            topTextField.text = memeBeingEdited.topText
-            bottomTextField.text = memeBeingEdited.bottomText
             imagePickerView.image = memeBeingEdited.originalImage
+            switchToMemeCreatingMode(topText: memeBeingEdited.topText, bottomText: memeBeingEdited.bottomText, editMode: 1)
         }
         else {
             switchToImagePickingMode()
@@ -76,7 +72,7 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
             imagePickerView.image = image
         }
         dismiss(animated: true, completion: nil)
-        switchToMemeCreatingMode()
+        switchToMemeCreatingMode(topText: topText, bottomText: bottomText, editMode: 0)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -100,11 +96,11 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
         toggleUIVisibilityToMemeCreatingMode(false)
     }
     
-    func switchToMemeCreatingMode() {
+    func switchToMemeCreatingMode(topText: String, bottomText: String, editMode: Int) {
         topTextField.text = topText
         bottomTextField.text = bottomText
-        topTextField.tag = 0
-        bottomTextField.tag = 0
+        topTextField.tag = editMode
+        bottomTextField.tag = editMode
         toggleUIVisibilityToMemeCreatingMode(true)
     }
     
