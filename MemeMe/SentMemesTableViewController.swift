@@ -46,6 +46,13 @@ class SentMemesTableViewController: UITableViewController {
         navigationController?.pushViewController(detailController, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            (UIApplication.shared.delegate as! AppDelegate).removeMeme(at: (indexPath as NSIndexPath).row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     private func registerTableViewCells() {
         let cell = UINib(nibName: "SentMemesTableViewCell", bundle: nil)
         tableView.register(cell, forCellReuseIdentifier: "sentMemesTableViewCell")
