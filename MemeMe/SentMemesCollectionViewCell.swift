@@ -9,10 +9,16 @@
 import UIKit
 
 class SentMemesCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var memedImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    public func setImage(_ image: UIImage) {
+        memedImageView.image = image
+    }
+    
 }
