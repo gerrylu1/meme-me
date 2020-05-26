@@ -51,6 +51,7 @@
 		EE89C0B9244AB1D700077938 /* MemeMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE89C0BD244AB1D700077938 /* MemeMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeTests.swift; sourceTree = "<group>"; };
 		EE89C0BF244AB1D700077938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE96FC29247D97A500BBCA1B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EEAFF222244FEC7200D54E0C /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		EEEF4A3E245AAE950014C459 /* SentMemesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewCell.swift; sourceTree = "<group>"; };
 		EEEF4A3F245AAE950014C459 /* SentMemesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SentMemesTableViewCell.xib; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		EE89C09A244AB1D600077938 = {
 			isa = PBXGroup;
 			children = (
+				EE96FC29247D97A500BBCA1B /* README.md */,
 				EE89C0A5244AB1D600077938 /* MemeMe */,
 				EE89C0BC244AB1D700077938 /* MemeMeTests */,
 				EE89C0A4244AB1D600077938 /* Products */,
