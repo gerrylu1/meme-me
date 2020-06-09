@@ -10,7 +10,6 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
-    @IBOutlet var SentMemesCollectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     // set the desired layout

@@ -75,7 +75,6 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Collection" image="collection" id="QZM-fg-8u6"/>
                     <connections>
-                        <outlet property="SentMemesCollectionView" destination="dVV-V7-zkx" id="95X-oh-tSb"/>
                         <outlet property="flowLayout" destination="lIo-K9-d7a" id="WjW-rc-v5v"/>
                     </connections>
                 </collectionViewController>
